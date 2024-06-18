@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+
+.slide {
+    width: 100vw;
+    height: 80vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("../../public/assets/slide.jpg");
+    background-position: center top;
+    background-size: cover;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        /*font-family: "Righteous", sans-serif;*/
+        font-family: "DM Serif Display", serif;
+        font-weight: 400;
+        padding: 40px 20px;
+        font-size: 60px;
+        text-align: center;
+
+        color: white;
+    }
+}

@@ -1,30 +1,39 @@
-$pinkred: #F8395A;
+$orange: #e86819;
+$lightorange: #fa863efb;
+$yellow: #FBB03B;
 $blue: #24355A;
-$lightgrey: #F7F8F8;
+$darkgreen: #293731;
+$green: #2F4B3F;
+$lightgrey: #e2e2e2;
+$lightergrey: #f7f7f7;
 $grey: #bdb9b9;
 $darkgrey: #969393;
 
 
 @mixin shadow {
-  box-shadow: 0 3px 10px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 10px 2px rgba(0, 0, 0, 0.1);
 }
 
 @mixin buttonStyle {
-  padding: 10px 15px;
-  background-color: $pinkred;
-  border: none;
-  font-size: 20px;
-  font-weight: 600;
+  padding: 8px 15px;
+  background-color: $orange;
+  border: 1px solid rgba(0, 0, 0, 0.0);
+  font-size: 16px;
+  font-weight: 350;
   cursor: pointer;
   transition: 0.3s ease;
   color: white;
-  border-radius: 10px;
 }
 
 :export {
-  pinkred: $pinkred;
+  orange: $orange;
+  lightorange: $lightorange;
+  yellow:$yellow;
   blue: $blue;
+  green: $green;
+  darkgreen: $darkgreen;
   lightgrey: $lightgrey;
+  lightergrey:$lightergrey;
   grey: $grey;
   darkgrey: $darkgrey;
 }
