@@ -21,11 +21,11 @@ const RegisterPage = () => {
     });
   };
 
-  const [passwordMatch, setPasswordMatch] = useState(true)
+  const [passwordMatch, setPasswordMatch] = useState(true);
 
   useEffect(() => {
-    setPasswordMatch(formData.password === formData.confirmPassword || formData.confirmPassword === "")
-  })
+    setPasswordMatch(formData.password === formData.confirmPassword || formData.confirmPassword === "");
+  },[formData.password, formData.confirmPassword]); // Add dependencies
 
   const navigate = useNavigate()
 
@@ -40,7 +40,7 @@ const RegisterPage = () => {
       }
 
       const response = await fetch("http://localhost:3001/auth/register", {
-        method: "GET",
+        method: "POST",
         body: register_form
       })
 

@@ -1,3 +1,5 @@
+@import "./variables.scss";
+
 .loader {
     display: flex;
     justify-content: center;
@@ -6,8 +8,8 @@
 }
 
 .loader-inner {
-    border: 6px solid #f3f3f3;
-    border-top: 6px solid #3498db;
+    border: 6px solid $green;
+    border-top: 6px solid white;
     border-radius: 50%;
     width: 40px;
     height: 40px;

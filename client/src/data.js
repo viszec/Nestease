@@ -56,19 +56,19 @@ export const categories = [
         description: "This property is close to the beach!",
     },
     {
-        img: "assets/windmill_cat.webp",
+        img: "assets/windmill_cat.jpg",
         label: "Windmills",
         icon: <GiWindmill />,
         description: "This property is has windmills!",
     },
     {
-        img: "assets/modern_cat.webp",
+        img: "assets/modern_cat.jpg",
         label: "Iconic Cities",
         icon: <MdOutlineVilla />,
         description: "This property is modern!",
     },
     {
-        img: "assets/countryside_cat.webp",
+        img: "assets/countryside_cat.jpg",
         label: "Countryside",
         icon: <TbMountain />,
         description: "This property is in the countryside!",
@@ -80,7 +80,7 @@ export const categories = [
         description: "This is property has a beautiful pool!",
     },
     {
-        img: "assets/island_cat.webp",
+        img: "assets/island_cat.jpg",
         label: "Islands",
         icon: <GiIsland />,
         description: "This property is on an island!",

@@ -1,0 +1,61 @@
+@import "./breakpoints.scss";
+@import "./variables.scss";
+@import "./ListingCard.scss";
+
+
+.list-container {
+  background-color: rgb(242, 242, 242);
+  padding: 40px 130px 120px;
+
+  @include mm {
+    padding: 40px 20px;
+  }
+}
+
+.list {
+  background-color: white;
+  padding: 30px 40px;
+  border-radius: 20px;
+  margin-top: 40px;
+
+
+  .title {
+    display: flex;
+    align-items: center;
+    color: $green;
+
+    @include xl {
+      font-size: 24px;
+      padding: 20px 10px;
+    }
+
+    @include sm {
+      font-size: 20px;
+      padding: 20px 10px;
+    }
+  }
+
+  .trip_list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 50px;
+    justify-content: center;
+    gap: 10px;
+
+    @include xl {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      padding: 0 30px;
+    }
+
+    @include sm {
+      display: grid;
+      grid-template-columns: 1fr;
+      padding: 0;
+    }
+  }
+
+  @include xl {
+    padding: 0 20px 120px;
+  }
+}

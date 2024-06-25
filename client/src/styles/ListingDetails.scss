@@ -1,0 +1,405 @@
+@import "./variables.scss";
+@import "./breakpoints.scss";
+
+
+.listing-container {
+  background-color: rgb(242, 242, 242);
+  padding: 40px 130px 120px;
+
+  @include mm {
+    padding: 40px 20px;
+  }
+}
+
+.listing-details {
+  background-color: white;
+  padding: 30px 40px;
+  border-radius: 20px;
+  margin-top: 40px;
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $green;
+
+    @include sm {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    h1 {
+      color: $green;
+
+      @include sm {
+        font-size: 18px;
+      }
+    }
+
+    .save {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+
+      p {
+        font-size: 20px;
+        font-weight: 700;
+        margin: 0;
+
+        @include sm {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .grid-container {
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    /* Left column takes 2/3, right column takes 1/3 */
+    gap: 10px;
+    margin: 20px 0;
+
+    @include lg {
+      grid-template-columns: 1fr;
+    }
+
+    @include sm {
+      margin: 5px 0;
+    }
+
+    .slider-container {
+      position: relative;
+      overflow: hidden;
+      max-height: 630px;
+
+      @include xl {
+        width: 520px;
+        height: 350px;
+      }
+
+      @include sm {
+        width: 270px;
+        height: 200px;
+      }
+
+      .grid-column-left-slide {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: 100%;
+        height: 100%;
+
+        .slide {
+          min-width: 100%;
+          transition: transform 0.5s ease-in-out;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            @include xl {
+              width: 520px;
+              height: 350px;
+              margin-top: -91%;
+            }
+
+            @include sm {
+              width: 270px;
+              height: 199px;
+              margin-top: -19.4%;
+            }
+          }
+        }
+      }
+
+      .prev-button,
+      .next-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: $lightgrey;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        z-index: 10;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include sm {
+          height: 20px;
+          width: 20px;
+        }
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.8);
+        }
+      }
+
+      .prev-button {
+        left: 10px;
+      }
+
+      .next-button {
+        right: 10px;
+      }
+    }
+
+    .grid-column-right {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      height: 100%;
+      /* Make sure it takes the full height of the container */
+
+      @include ml {
+        display: none;
+      }
+
+      .listing-image-up,
+      .listing-image-down {
+        width: 100%;
+        height: calc(50% - 5px);
+        position: relative;
+        overflow: hidden;
+
+        img {
+          object-fit: cover;
+          position: absolute;
+
+          @include xl {
+            width: 139px;
+            height: 100px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.listing-image {
+  max-width: 100%;
+  display: block;
+}
+
+h2,
+h3 {
+  color: $green;
+}
+
+h2 {
+  @include sm {
+    padding-top: 10px;
+    font-size: 18px;
+  }
+}
+
+h3 {
+  @include sm {
+    font-size: 17px;
+  }
+}
+
+hr {
+  margin: 20px 0;
+  border: none;
+  border-top: 1px solid $lightgrey;
+}
+
+.profile {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+
+  img {
+    width: 60px;
+    height: 60px;
+    margin: 0;
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
+
+    @include sm {
+      width: 30px;
+      height: 30px;
+    }
+
+
+  }
+}
+
+.listing_counts,
+p {
+  max-width: 800px;
+  margin-top: 20px;
+}
+
+.listing_counts {
+  color: $blue;
+  font-weight: 600;
+  font-size: 17px;
+
+  @include sm {
+    font-size: 14px;
+  }
+}
+
+p {
+  color: $darkgrey;
+  font-weight: 300;
+  font-size: 15px;
+
+  @include sm {
+    font-size: 12px;
+  }
+}
+
+.booking {
+  display: flex;
+  flex-direction: column; // Ensure items are in a column layout
+  justify-content: space-between;
+  align-items: flex-start;
+
+  @include lg {
+    flex-direction: column;
+    gap: 50px;
+    align-items: flex-start;
+  }
+
+  .amenities {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+    margin: 20px auto;
+    max-width: 700px;
+    color: $green;
+
+    @include sm {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 5px;
+    }
+
+    .facility {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 5px;
+      border: 2px solid $green;
+      border-radius: 10px;
+      justify-content: center;
+      padding: 10px;
+      height: 50px;
+
+      &_icon {
+        font-size: 25px;
+        display: flex;
+        align-items: center;
+
+        @include sm {
+          font-size: 20px;
+        }
+      }
+
+      &_item {
+        margin: 0;
+        font-size: 14px;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        @include sm {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .calendar {
+    .date-range-calendar {
+      margin: 20px 0;
+
+      @include sm {
+        margin: 10px 0;
+        margin-left: -30px;
+      }
+
+      h2 {
+        margin-bottom: 10px;
+        font-size: 22px;
+
+        @include sm {
+          margin-bottom: 10px;
+          font-size: 18px;
+        }
+      }
+
+      .day_night {
+        font-size: 18px;
+        color: $darkgrey;
+
+        @include sm {
+          font-size: 15px;
+          margin-left: 10px;
+        }
+      }
+
+      .start_date,
+      .end_date {
+        color: $orange;
+
+        @include sm {
+          font-size: 15px;
+          margin-left: 10px;
+        }
+      }
+
+      .total_price {
+        color: $orange;
+
+        @include sm {
+          margin-left: 10px;
+        }
+      }
+
+      h2 {
+        @include sm {
+          margin-left: 10px;
+        }
+      }
+
+      .dateRange {
+        font-size: 15px;
+        color: $darkgrey;
+
+        @include sm {
+          font-size: 14px;
+        }
+      }
+
+      .button {
+        @include buttonStyle;
+        width: 100%;
+        margin-top: 30px;
+
+        @include lg {
+          max-width: 300px;
+        }
+
+        @include sm {
+          max-width: 150px;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}

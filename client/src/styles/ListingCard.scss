@@ -1,20 +1,17 @@
 @import "./variables.scss";
 
 .listing-card {
+    max-width: 320px;
     position: relative;
     cursor: pointer;
     padding: 10px;
     border-radius: 10px;
 
-    &:hover {
-        @include shadow;
-    }
-
     .slider-container {
         width: 300px;
         overflow: hidden;
-        border-radius: 10px;
         margin-bottom: 10px;
+        border-radius: 10px;
 
         .slider {
             display: flex;
@@ -40,17 +37,15 @@
                     top: 50%;
                     transform: translateY(-50%);
                     padding: 6px;
-                    border-radius: 50%;
-                    border: none;
                     cursor: pointer;
                     display: flex;
+                    color: $lightgrey;
                     align-items: center;
                     justify-content: center;
-                    background-color: rgba(255, 255, 255, 0.7);
                     z-index: 9999;
 
                     &:hover {
-                        background-color: white;
+                        color: white;
                     }
                 }
 
@@ -66,16 +61,38 @@
     }
 
     h3 {
-        font-size: 18px;
+        font-size: 16px;
+        color: $green;
+        word-wrap: break-word;
     }
 
-    p {
+    .category {
         font-size: 16px;
+        color: $green;
+    }
+
+    .type {
+        font-size: 16px;
+        color: $darkgrey;
+    }
+
+    .price,
+    .total_price {
+        font-weight: 700;
+        font-size: 16px;
+        color: $orange;
+    }
+
+    .date_range {
+        font-size: 15px;
+        color: $darkgrey;
+        font-weight: 500;
     }
 
     span {
+        font-size: 15px;
+        color: $blue;
         font-weight: 700;
-        font-size: 18px;
     }
 
     .favorite {

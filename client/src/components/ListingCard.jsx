@@ -81,7 +81,7 @@ const ListingCard = ({
             <div key={index} className="slide">
               <img
                 src={`http://localhost:3001/${photo?.replace("public", "")}`}
-                alt={`photo ${index + 1}`}
+                alt={`Listing img ${index + 1}`}
               />
               <div
                 className="prev-button"
@@ -90,7 +90,7 @@ const ListingCard = ({
                   goToPrevSlide(e);
                 }}
               >
-                <ArrowBackIosNew sx={{ fontSize: "15px" }} />
+                <ArrowBackIosNew sx={{ fontSize: "13px" }} />
               </div>
               <div
                 className="next-button"
@@ -99,33 +99,39 @@ const ListingCard = ({
                   goToNextSlide(e);
                 }}
               >
-                <ArrowForwardIos sx={{ fontSize: "15px" }} />
+                <ArrowForwardIos sx={{ fontSize: "13px" }} />
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      <h3>
-        {city}, {province}, {country}
+      <h3 className="city_country">
+        {city}, {country}
       </h3>
-      <p>{category}</p>
+      <div className="category">{category}</div>
 
       {!booking ? (
         <>
-          <p>{type}</p>
-          <p>
-            <span>${price}</span> per night
-          </p>
+          <div className="type">{type}</div>
+          <div>
+            <div className="price">
+              ${price}
+              <span> per night</span>
+            </div>
+          </div>
         </>
       ) : (
         <>
-          <p>
+          <div className="date_range">
             {startDate} - {endDate}
-          </p>
-          <p>
-            <span>${totalPrice}</span> total
-          </p>
+          </div>
+          <div>
+            <div className="total_price">
+              ${totalPrice}
+              <span> total</span>
+            </div>
+          </div>
         </>
       )}
 
@@ -138,7 +144,7 @@ const ListingCard = ({
         disabled={!user}
       >
         {isLiked ? (
-          <Favorite sx={{ color: "red" }} />
+          <Favorite sx={{ color: "darkorange" }} />
         ) : (
           <Favorite sx={{ color: "white" }} />
         )}

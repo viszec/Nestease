@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import { categories } from "../data";
 import "../styles/Listings.scss";
 import ListingCard from "./ListingCard";
@@ -9,12 +9,13 @@ import { setListings } from "../redux/state";
 const Listings = () => {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
-
   const [selectedCategory, setSelectedCategory] = useState("All");
-
+  const [showLeftArrow, setShowLeftArrow] = useState(false);
+  const [showRightArrow, setShowRightArrow] = useState(true);
   const listings = useSelector((state) => state.listings);
+  const categoryListRef = useRef(null);
 
-  const getFeedListings = async () => {
+  const getFeedListings = useCallback(async () => {
     try {
       const response = await fetch(
         selectedCategory !== "All"
@@ -31,25 +32,57 @@ const Listings = () => {
     } catch (err) {
       console.log("Fetch Listings Failed", err.message);
     }
-  };
+  }, [selectedCategory, dispatch]);
 
   useEffect(() => {
     getFeedListings();
-  }, [selectedCategory]);
+  }, [getFeedListings]);
+
+  const handleMouseMove = (e) => {
+    const { left, width } = categoryListRef.current.getBoundingClientRect();
+    const mouseX = e.clientX - left;
+    const scrollPosition =
+      (mouseX / width) * categoryListRef.current.scrollWidth - width / 2;
+    categoryListRef.current.scrollTo({
+      left: scrollPosition,
+      behavior: "smooth",
+    });
+  };
+
+  const handleScroll = () => {
+    const { scrollLeft, scrollWidth, clientWidth } = categoryListRef.current;
+    setShowLeftArrow(scrollLeft > 0);
+    setShowRightArrow(scrollLeft < scrollWidth - clientWidth);
+  };
+
+  useEffect(() => {
+    handleScroll(); // Initial check
+  }, []);
 
   return (
     <>
-      <div className="category-list">
-        {categories?.map((category, index) => (
-          <div
-            className={`category ${category.label === selectedCategory ? "selected" : ""}`}
-            key={index}
-            onClick={() => setSelectedCategory(category.label)}
-          >
-            <div className="category_icon">{category.icon}</div>
-            <p>{category.label}</p>
-          </div>
-        ))}
+      <div className="scroll-container">
+        {showLeftArrow && <div className="left-arrow">&lt;</div>}
+        <div
+          className="category-list"
+          ref={categoryListRef}
+          onMouseMove={handleMouseMove}
+          onScroll={handleScroll}
+        >
+          {categories?.map((category, index) => (
+            <div
+              className={`category ${
+                category.label === selectedCategory ? "selected" : ""
+              }`}
+              key={index}
+              onClick={() => setSelectedCategory(category.label)}
+            >
+              <div className="category_icon">{category.icon}</div>
+              <div className="category_label">{category.label}</div>
+            </div>
+          ))}
+        </div>
+        {showRightArrow && <div className="right-arrow">&gt;</div>}
       </div>
 
       {loading ? (
@@ -67,9 +100,10 @@ const Listings = () => {
               category,
               type,
               price,
-              booking=false
+              booking = false,
             }) => (
               <ListingCard
+                key={_id} // Ensure unique key prop
                 listingId={_id}
                 creator={creator}
                 listingPhotoPaths={listingPhotoPaths}

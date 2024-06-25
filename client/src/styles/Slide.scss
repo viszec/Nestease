@@ -1,26 +1,90 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+@import "./variables.scss";
+@import "./breakpoints.scss";
 
 .slide {
     width: 100vw;
-    height: 80vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url("../../public/assets/slide.jpg");
+    height: 60vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../public/assets/slide.gif");
     background-position: center top;
     background-size: cover;
     align-items: center;
     display: flex;
     justify-content: center;
-    align-items: center;
+    flex-direction: column;
+
+    @include sm {
+        width: 100vw;
+        height: 30vh;
+    }
 
     h1 {
-        /*font-family: "Righteous", sans-serif;*/
         font-family: "DM Serif Display", serif;
         font-weight: 400;
-        padding: 40px 20px;
-        font-size: 60px;
+        padding: 20px 20px;
+        font-size: 80px;
         text-align: center;
+        text-transform: uppercase;
+        color: wheat;
+        position: relative;
 
+        .highlight {
+            color: $orange;
+        }
+
+        @include sm {
+            font-weight: 400;
+            font-size: 30px;
+        }
+    }
+
+    .heading-container {
+        position: relative;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .highlight-arc1,
+    .highlight-arc2 {
+        position: absolute;
+        left: 50%;
+        bottom: 5px;
+        /* Adjust as needed */
+        transform: translateX(-50%);
+        width: 100%;
+        height: 30px;
+
+        @include sm {}
+
+        /* Adjust as needed */
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .highlight-arc1 {
+        transform: translateX(-50%) rotate(-2deg);
+        /* Adjust the rotate value for the angle */
+    }
+
+    .highlight-arc2 {
+        width: 90%;
+        transform: translateX(-50%) rotate(-6deg);
+        /* Adjust the rotate value for the angle */
+    }
+
+    h2 {
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 400;
+        font-size: 40px;
+        text-align: center;
         color: white;
+
+        @include sm {
+            font-weight: 200;
+            font-size: 16px;
+        }
     }
 }
