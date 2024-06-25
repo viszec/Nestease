@@ -1,6 +1,9 @@
 ## 🏠 NESTEASE - A Full Stack Home Rentals Application
 
-Welcome to the Full Stack Home Rentals Application! This project guides you through building a full-stack application similar to Airbnb using React, Redux, Node.js, MongoDB, JWT, and Material UI. This application covers user registration, login, and property listing functionalities, demonstrating advanced coding techniques for your portfolio.
+![logo](https://github.com/viszec/nestease/assets/39253875/b36db54c-0784-4a82-b5f7-1582dd602aab)
+
+Welcome to the Full Stack Home Rentals Application! 
+This project guides you through building a full-stack application similar to Airbnb using React, Redux, Node.js, MongoDB, JWT, and Material UI. This application covers user registration, login, and property listing functionalities, demonstrating advanced coding techniques for your portfolio.
 
 ### Table of Contents
 - [Key Features](#key-features)
