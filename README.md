@@ -5,6 +5,8 @@
 Welcome to the Full Stack Home Rentals Application! 
 This project guides you through building a full-stack application similar to Airbnb using React, Redux, Node.js, MongoDB, JWT, and Material UI. This application covers user registration, login, and property listing functionalities, demonstrating advanced coding techniques for your portfolio.
 
+![nestease profile](https://github.com/viszec/nestease/assets/39253875/e7264e17-7f8e-49a1-9b5c-2e70408efe51)
+
 ### Table of Contents
 - [Key Features](#key-features)
 - [Demo](#demo)
@@ -57,13 +59,28 @@ This project guides you through building a full-stack application similar to Air
 
 5. Start the development server:
    ```bash
-   # In the server directory
+   // In the server directory
    npm run dev
 
 6. Start the client server:
    ```bash
-   # In the client directory
+   // In the client directory
    npm start
+   
+7. Add packages on client
+   ```bash
+   // These packages collectively help you manage routing, styles, UI components, and icons in your React application, providing a comprehensive set of tools to build modern web applications.
+   npm i react-router-dom sass @mui/material @mui/icons-material @emotion/react @emotion/styled
+
+8. Add packages on server
+   ```bash
+   // These packages collectively help you manage the state of your React application using Redux, simplifying state management with the Redux Toolkit and ensuring the state is persisted across sessions with redux-persist.
+
+   npm i react-redux @reduxjs/toolkit redux-persist
+
+    "scripts": {
+    "start": "nodemon index.js"
+   }, // Modify the package.json file in the server to start the server
 
 ### Usage
 
