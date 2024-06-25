@@ -2,6 +2,9 @@ const router = require("express").Router()
 
 const User = require("../models/User")
 
+const Booking = require("../models/Booking"); // Add this line to import Booking model
+const Listing = require("../models/Listing"); // Add this line to import Listing model if not already done
+
 /* GET TRIP LIST */
 router.get("/:userId/trips", async (req, res) => {
     try {
