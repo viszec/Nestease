@@ -4,7 +4,7 @@ import { ArrowForwardIos, ArrowBackIosNew } from "@mui/icons-material";
 import { useNavigate, useParams } from "react-router-dom";
 import { facilities } from "../data";
 import "react-date-range/dist/styles.css";
-import "react-date-range/dist/theme/costmize.css";
+import "react-date-range/dist/theme/default.css";
 import { DateRange } from "react-date-range";
 import Loader from "../components/Loader";
 import Navbar from "../components/Navbar";
