@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import "../styles/List.scss";
 import Navbar from "../components/Navbar";
 import { useParams } from "react-router-dom";
@@ -15,7 +15,7 @@ const CategoryPage = () => {
   const dispatch = useDispatch()
   const listings = useSelector((state) => state.listings);
 
-  const getFeedListings = async () => {
+  const getFeedListings = useCallback(async () => {
     try {
       const response = await fetch(
           `http://localhost:3001/properties?category=${category}`,
@@ -30,11 +30,11 @@ const CategoryPage = () => {
     } catch (err) {
       console.log("Fetch Listings Failed", err.message);
     }
-  };
+  }, [dispatch, category]);
 
   useEffect(() => {
     getFeedListings();
-  }, [category]);
+  }, [getFeedListings]);
 
   return loading ? (
     <Loader />
