@@ -19,8 +19,15 @@ app.use("/users", userRoutes)
 app.use("/properties", listingRoutes)
 app.use("/bookings", bookingRoutes)
 
+app.get("/", (req, res) => res.send("Express on Vercel"));
+app.listen(3000, () => console.log("Server ready on port 3000."));
+
+
 /* MONGOOSE SETUP */
-const PORT = 3001;
+//const PORT = 3001;
+
+const PORT = process.env.PORT || 3001;
+
 mongoose
     .connect(process.env.MONGO_URL, {
         dbName: "Nestease",
@@ -31,3 +38,5 @@ mongoose
         app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
     })
     .catch((err) => console.log(`${err} did not connect`));
+
+
