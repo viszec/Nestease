@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import "../styles/List.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { setListings } from "../redux/state";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import Loader from "../components/Loader";
 import Navbar from "../components/Navbar";
 import ListingCard from "../components/ListingCard";
@@ -15,7 +15,7 @@ const SearchPage = () => {
 
   const dispatch = useDispatch();
 
-  const getSearchListings = async () => {
+  const getSearchListings = useCallback(async () => {
     try {
       const response = await fetch(
         `http://localhost:3001/properties/search/${search}`,
@@ -30,11 +30,11 @@ const SearchPage = () => {
     } catch (err) {
       console.log("Fetch Search List failed!", err.message);
     }
-  };
+  }, [dispatch, search]);
 
   useEffect(() => {
     getSearchListings();
-  }, [search]);
+  }, [getSearchListings]);
 
   return loading ? (
     <Loader />

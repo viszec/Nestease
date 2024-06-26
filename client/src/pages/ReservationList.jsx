@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import "../styles/List.scss";
 import Loader from "../components/Loader";
 import Navbar from "../components/Navbar";
@@ -14,7 +14,7 @@ const ReservationList = () => {
 
   const dispatch = useDispatch();
 
-  const getReservationList = async () => {
+  const getReservationList = useCallback(async () => {
     try {
       const response = await fetch(
         `http://localhost:3001/users/${userId}/reservations`,
@@ -29,11 +29,11 @@ const ReservationList = () => {
     } catch (err) {
       console.log("Fetch Reservation List failed!", err.message);
     }
-  };
+  },[dispatch, userId]);
 
   useEffect(() => {
     getReservationList();
-  }, []);
+  },[getReservationList]);
 
   return loading ? (
     <Loader />

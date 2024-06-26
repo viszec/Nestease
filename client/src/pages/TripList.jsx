@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import "../styles/List.scss";
 import Loader from "../components/Loader";
 import Navbar from "../components/Navbar";
@@ -14,7 +14,7 @@ const TripList = () => {
 
   const dispatch = useDispatch();
 
-  const getTripList = async () => {
+  const getTripList = useCallback(async () => {
     try {
       const response = await fetch(
         `http://localhost:3001/users/${userId}/trips`,
@@ -30,11 +30,11 @@ const TripList = () => {
       console.log("Fetch Trip List failed!", err.message);
       setLoading(false); // Make sure loading is set to false even when an error occurs
     }
-  };
+  }, [dispatch, userId]);
 
   useEffect(() => {
     getTripList();
-  }, []);
+  }, [getTripList]);
 
   return loading ? (
     <Loader />

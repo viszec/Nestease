@@ -2,7 +2,7 @@ import "../styles/List.scss";
 import { useDispatch, useSelector } from "react-redux";
 import Navbar from "../components/Navbar";
 import ListingCard from "../components/ListingCard";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { setPropertyList } from "../redux/state";
 import Loader from "../components/Loader";
 import Footer from "../components/Footer";
@@ -14,7 +14,7 @@ const PropertyList = () => {
   console.log(user);
 
   const dispatch = useDispatch();
-  const getPropertyList = async () => {
+  const getPropertyList = useCallback(async () => {
     try {
       const response = await fetch(
         `http://localhost:3001/users/${user._id}/properties`,
@@ -29,11 +29,11 @@ const PropertyList = () => {
     } catch (err) {
       console.log("Fetch all properties failed", err.message);
     }
-  };
+  }, [dispatch, user._id]);
 
   useEffect(() => {
     getPropertyList();
-  }, []);
+  }, [getPropertyList]);
 
   return loading ? (
     <Loader />
