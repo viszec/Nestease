@@ -1,0 +1,40 @@
+{
+    "version": 2,
+    "projects": [
+      {
+        "name": "nestease-client",
+        "root": "./client",
+        "builds": [
+          {
+            "src": "client/package.json",
+            "use": "@vercel/static-build",
+            "config": {
+              "distDir": "build"
+            }
+          }
+        ],
+        "routes": [
+          {
+            "src": "/(.*)",
+            "dest": "/index.html"
+          }
+        ]
+      },
+      {
+        "name": "nestease-server",
+        "root": "./server",
+        "builds": [
+          {
+            "src": "server.js",
+            "use": "@vercel/node"
+          }
+        ],
+        "routes": [
+          {
+            "src": "/api/(.*)",
+            "dest": "server.js"
+          }
+        ]
+      }
+    ]
+  }
