@@ -61,7 +61,7 @@ export const Navbar = () => {
             <Person sx={{ color: variables.darkgrey }} />
           ) : (
             <img
-              src={`http://localhost:3001/${user.profileImagePath.replace(
+              src={`${process.env.REACT_APP_SERVER_URL}/${user.profileImagePath.replace(
                 "public",
                 ""
               )}`}
@@ -80,7 +80,7 @@ export const Navbar = () => {
 
         {dropdownMenu && user && (
           <div className="navbar_right_accountmenu">
-            <Link to="http://localhost:3000">Home</Link>
+            <Link to={`${process.env.REACT_APP_SERVER_URL}`}>Home</Link>
             <Link to="/create-listing">Become A Host</Link>
             <hr />
 
