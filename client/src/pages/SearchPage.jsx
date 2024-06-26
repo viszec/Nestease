@@ -18,7 +18,7 @@ const SearchPage = () => {
   const getSearchListings = useCallback(async () => {
     try {
       const response = await fetch(
-        `http://localhost:3001/properties/search/${search}`,
+        `${process.env.REACT_APP_SERVER_URL}/properties/search/${search}`,
         {
           method: "GET",
         }

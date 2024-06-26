@@ -92,7 +92,7 @@ const ListingDetails = () => {
         totalPrice: listing.price * dayCount,
       };
 
-      const response = await fetch("http://localhost:3001/bookings/create", {
+      const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/bookings/create`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -130,7 +130,7 @@ const ListingDetails = () => {
                 {listing?.listingPhotoPaths?.map((photo, index) => (
                   <div key={index} className="slide">
                     <img
-                      src={`http://localhost:3001/${photo.replace(
+                      src={`${process.env.REACT_APP_SERVER_URL}/${photo.replace(
                         "public",
                         ""
                       )}`}
@@ -152,7 +152,7 @@ const ListingDetails = () => {
               {listing.listingPhotoPaths?.[1] && (
                 <img
                   src={
-                    `http://localhost:3001/uploads/` +
+                    `${process.env.REACT_APP_SERVER_URL}/uploads/` +
                     listing.listingPhotoPaths[1].split("/").pop()
                   }
                   alt=""
@@ -162,7 +162,7 @@ const ListingDetails = () => {
               {listing.listingPhotoPaths?.[2] && (
                 <img
                   src={
-                    `http://localhost:3001/uploads/` +
+                    `${process.env.REACT_APP_SERVER_URL}/uploads/` +
                     listing.listingPhotoPaths[2].split("/").pop()
                   }
                   alt=""
@@ -184,7 +184,7 @@ const ListingDetails = () => {
 
           <div className="profile">
             <img
-              src={`http://localhost:3001/${listing.creator.profileImagePath.replace(
+              src={`${process.env.REACT_APP_SERVER_URL}/${listing.creator.profileImagePath.replace(
                 "public",
                 ""
               )}`}

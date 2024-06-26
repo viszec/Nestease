@@ -18,7 +18,7 @@ const CategoryPage = () => {
   const getFeedListings = useCallback(async () => {
     try {
       const response = await fetch(
-          `http://localhost:3001/properties?category=${category}`,
+          `${process.env.REACT_APP_SERVER_URL}/properties?category=${category}`,
         {
           method: "GET",
         }

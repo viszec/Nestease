@@ -17,7 +17,7 @@ const TripList = () => {
   const getTripList = useCallback(async () => {
     try {
       const response = await fetch(
-        `http://localhost:3001/users/${userId}/trips`,
+        `${process.env.REACT_APP_SERVER_URL}/users/${userId}/trips`,
         {
           method: "GET",
         }

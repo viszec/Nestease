@@ -17,7 +17,7 @@ const ReservationList = () => {
   const getReservationList = useCallback(async () => {
     try {
       const response = await fetch(
-        `http://localhost:3001/users/${userId}/reservations`,
+        `${process.env.REACT_APP_SERVER_URL}/users/${userId}/reservations`,
         {
           method: "GET",
         }
