@@ -16,7 +16,7 @@ import SearchPage from "./pages/SearchPage";
 function App() {
   return (
     <div>
-      <BrowserRouter>
+      <BrowserRouter basename="/nestease">
         <Routes>
         <Route path="/" element={<HomePage />} />
           <Route path="/register" element={<RegisterPage />} />

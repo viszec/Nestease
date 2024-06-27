@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="footer_left">
-        <a href="/"><img src="/assets/logo.png" alt="logo" /></a>
+        <a href="/"><img src={`${process.env.PUBLIC_URL}/logo.png`} alt="logo" /></a>
       </div>
 
       <div className="footer_center">
@@ -23,7 +23,7 @@ const Footer = () => {
         <ul>
           <li className="footer_right_info"><LocalPhone />+1 234 567 89</li>
           <li className="footer_right_info"><Email />nestease@support.com</li>
-          <img src="/assets/payment.png" alt="payment" />
+          <img src={`${process.env.PUBLIC_URL}/assets/payment.png`} alt="payment" />
         </ul>
 
 
