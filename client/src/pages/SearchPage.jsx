@@ -5,7 +5,7 @@ import { setListings } from "../redux/state";
 import { useEffect, useState, useCallback } from "react";
 import Loader from "../components/Loader";
 import Navbar from "../components/Navbar";
-import ListingCard from "../components/ListingCard";
+import ListingCard from "../components/ListingCard_";
 import Footer from "../components/Footer";
 
 const SearchPage = () => {

@@ -21,7 +21,7 @@ const ListingDetails = () => {
   const getListingDetails = useCallback(async () => {
     try {
       const response = await fetch(
-        `http://localhost:3001/properties/${listingId}`,
+        `${process.env.REACT_APP_SERVER_URL}/properties/${listingId}`,
         {
           method: "GET",
         }

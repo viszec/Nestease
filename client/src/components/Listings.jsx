@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef, useCallback } from "react";
 import { categories } from "../data";
 import "../styles/Listings.scss";
-import ListingCard from "./ListingCard";
+import ListingCard from "./ListingCard_";
 import Loader from "./Loader";
 import { useDispatch, useSelector } from "react-redux";
 import { setListings } from "../redux/state";

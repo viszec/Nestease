@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { setListings } from "../redux/state";
 import Loader from "../components/Loader";
-import ListingCard from "../components/ListingCard";
+import ListingCard from "../components/ListingCard_";
 import Footer from "../components/Footer"
 
 const CategoryPage = () => {

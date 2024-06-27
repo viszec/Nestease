@@ -1,7 +1,7 @@
 import "../styles/List.scss";
 import { useDispatch, useSelector } from "react-redux";
 import Navbar from "../components/Navbar";
-import ListingCard from "../components/ListingCard";
+import ListingCard from "../components/ListingCard_";
 import { useEffect, useState, useCallback } from "react";
 import { setPropertyList } from "../redux/state";
 import Loader from "../components/Loader";
