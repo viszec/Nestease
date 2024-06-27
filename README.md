@@ -1,11 +1,12 @@
 ## 🏠 NESTEASE - A Full Stack Home Rentals Application
 
-![logo](https://github.com/viszec/nestease/assets/39253875/b36db54c-0784-4a82-b5f7-1582dd602aab)
+<img src="https://github.com/viszec/nestease/assets/39253875/b36db54c-0784-4a82-b5f7-1582dd602aab" alt="logo" width="200"/>
 
-Welcome to the Full Stack Home Rentals Application! 
+Welcome to the Full Stack Home Rentals Application!
 This project guides you through building a full-stack application similar to Airbnb using React, Redux, Node.js, MongoDB, JWT, and Material UI. This application covers user registration, login, and property listing functionalities, demonstrating advanced coding techniques for your portfolio.
 
 ![nestease profile](https://github.com/viszec/nestease/assets/39253875/e7264e17-7f8e-49a1-9b5c-2e70408efe51)
+
 
 ### Table of Contents
 - [🏠 NESTEASE - A Full Stack Home Rentals Application](#-nestease---a-full-stack-home-rentals-application)
@@ -18,22 +19,22 @@ This project guides you through building a full-stack application similar to Air
   - [Project Structure](#project-structure)
   - [Contributing](#contributing)
   - [License](#license)
-    - [Contact](#contact)
+  - [Contact](#contact)
 
 ### Key Features
-- Authentication: Sign up & Log in with Auth, JWT, Bcrypt.
-- Property Listings: Create new listings with detailed information.
-- Options Management: Select & Unselect options.
-- Photo Management: Upload, delete, drag & drop photos.
-- Bookings: Create bookings with an interactive calendar.
-- Property Feed: Fetch property feed by category.
-- Search Functionality: Search for properties by keyword.
-- Wishlist: Add & Remove wishlist item(s).
-- Photo Storage: Upload photos from local & store in MongoDB.
-- Schema Management: Mongoose schema for data modeling.
-- State Management: Redux state management.
-- Styling: Sass (scss) and Material UI for styling.
-
+- [Authentication: Sign up & Log in with Auth, JWT, Bcrypt.](#usage)
+- [Property Listings: Create new listings with detailed information.](#usage)
+- [Options Management: Select & Unselect options.](#usage)
+- [Photo Management: Upload, delete, drag & drop photos.](#usage)
+- [Bookings: Create bookings with an interactive calendar.](#usage)
+- [Property Feed: Fetch property feed by category.](#usage)
+- [Search Functionality: Search for properties by keyword.](#usage)
+- [Wishlist: Add & Remove wishlist item(s).](#usage)
+- [Photo Storage: Upload photos from local & store in MongoDB.](#usage)
+- [Schema Management: Mongoose schema for data modeling.](#usage)
+- [State Management: Redux state management.](#usage)
+- [Styling: Sass (scss) and Material UI for styling.](#usage)
+  
 ### Demo
 [Live Demo](https://viszec.github.io/nestease/)
 
@@ -118,7 +119,7 @@ Contributions are welcome! Please fork this repository and submit a pull request
 ### License
 Distributed under the MIT License. See LICENSE for more information.
 
-####  Contact
+### Contact
 - Mavis M. imavisma@gmail.com
 - Project Link: [https://github.com/viszec/nestese.git](https://github.com/viszec/nestease.git)
 
