@@ -3,7 +3,7 @@ import "../styles/Slide.scss";
 
 const Slide = () => {
   return (
-    <div className="slide">
+    <div className="slide_banner">
     <h2>Roam Anywhere, Stay Present,</h2>
     <div className="heading-container">
       <h1>
