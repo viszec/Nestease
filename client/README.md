@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+## Steps to Host Client on GitHub Pages
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Build the React Client Application:
 
-## Available Scripts
+   - Navigate to your React client's root directory and run:
+   ```bash
+   npm run build
+   ```
+   - This command creates a build directory with a production build of your app.
 
-In the project directory, you can run:
+2. Install gh-pages Package:
 
-### `npm start`
+   - In your React client directory, install the gh-pages package:
+   ```bash
+   npm install --save gh-pages
+   ```
+3. Update package.json:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+   - Add the following lines to the scripts section of your package.json file:
+   ```json
+   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+   }
+   ```
+   - Add a homepage field to your package.json file, replacing <username> and <repository> with your GitHub username and repository name:
+   ```json
+   "homepage": "https://<username>.github.io/<repository>"
+   ```
+4. Deploy the React Client Application:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+   - Run the following command to deploy your app to GitHub Pages:
+   ```bash
+   npm run deploy
+   - This command builds your app and pushes the contents of the build directory to the gh-pages branch of your repository.
 
-### `npm test`
+5. Enable GitHub Pages:
+   - Go to your GitHub repository.
+   - Navigate to Settings > Pages.
+   - In the Source dropdown, select the gh-pages branch and click Save.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+6. Update Client Fetch Requests:
+   - Ensure all fetch requests in your client code use the environment variable REACT_APP_SERVER_URL to refer to the server URL.
+   - Example in your React code:
+   ```javascript
+   const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/endpoint`);
+   ```
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+7. Set Up Environment Variables:
+   - Ensure your .env file in the client/ directory contains:
+   ```rust
+   REACT_APP_SERVER_URL='https://your-server-url.vercel.app'
+   ```

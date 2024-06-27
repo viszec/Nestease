@@ -8,15 +8,17 @@ This project guides you through building a full-stack application similar to Air
 ![nestease profile](https://github.com/viszec/nestease/assets/39253875/e7264e17-7f8e-49a1-9b5c-2e70408efe51)
 
 ### Table of Contents
-- [Key Features](#key-features)
-- [Demo](#demo)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Technologies Used](#technologies-used)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+- [🏠 NESTEASE - A Full Stack Home Rentals Application](#-nestease---a-full-stack-home-rentals-application)
+  - [Table of Contents](#table-of-contents)
+  - [Key Features](#key-features)
+  - [Demo](#demo)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Technologies Used](#technologies-used)
+  - [Project Structure](#project-structure)
+  - [Contributing](#contributing)
+  - [License](#license)
+    - [Contact](#contact)
 
 ### Key Features
 - Authentication: Sign up & Log in with Auth, JWT, Bcrypt.
@@ -33,7 +35,7 @@ This project guides you through building a full-stack application similar to Air
 - Styling: Sass (scss) and Material UI for styling.
 
 ### Demo
-[Live Demo](Replace with your live demo URL)
+[Live Demo](https://viszec.github.io/nestease/)
 
 ### Installation
 
