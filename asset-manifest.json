@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/nestease/static/css/main.6b74f397.css",
+    "main.js": "/nestease/static/js/main.f0f6bb6e.js",
+    "static/media/slide.gif": "/nestease/static/media/slide.8077fcfed6e80f943377.gif",
+    "static/media/register.jpg": "/nestease/static/media/register.54dd1cab01be8190a62d.jpg",
+    "static/media/login.jpg": "/nestease/static/media/login.b5b34587e17a9a6595fc.jpg",
+    "index.html": "/nestease/index.html",
+    "main.6b74f397.css.map": "/nestease/static/css/main.6b74f397.css.map",
+    "main.f0f6bb6e.js.map": "/nestease/static/js/main.f0f6bb6e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6b74f397.css",
+    "static/js/main.f0f6bb6e.js"
+  ]
+}
