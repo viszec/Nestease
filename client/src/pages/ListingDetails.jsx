@@ -120,7 +120,7 @@ const ListingDetails = () => {
             <h1>{listing.title}</h1>
             <div></div>
           </div>
-
+          
           <div className="grid-container">
             <div className="slider-container">
               <div
@@ -141,10 +141,10 @@ const ListingDetails = () => {
                 ))}
               </div>
               <button className="prev-button" onClick={goToPrevSlide}>
-                <ArrowBackIosNew sx={{ fontSize: "15px" }} />
+                <ArrowBackIosNew className="custom-arrow" sx={{ fontSize: "15px" }} />
               </button>
               <button className="next-button" onClick={goToNextSlide}>
-                <ArrowForwardIos sx={{ fontSize: "15px" }} />
+                <ArrowForwardIos className="custom-arrow" sx={{ fontSize: "15px" }} />
               </button>
             </div>
 

@@ -165,8 +165,8 @@ const CreateListing = () => {
                   key={index}
                   onClick={() => setCategory(item.label)}
                 >
-                  <div className="category_icon">{item.icon}</div>
-                  <div className="category_label">{item.label}</div>
+                  <span className="category_icon">{item.icon}</span>
+                  <span className="category_label">{item.label}</span>
                 </div>
               ))}
             </div>

@@ -80,7 +80,7 @@ export const Navbar = () => {
 
         {dropdownMenu && user && (
           <div className="navbar_right_accountmenu">
-            <Link to={`${process.env.REACT_APP_SERVER_URL}`}>Home</Link>
+            <Link to={`${process.env.REACT_APP_HOMEPAGE}`}>Home</Link>
             <Link to="/create-listing">Become A Host</Link>
             <hr />
 
