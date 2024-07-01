@@ -20,7 +20,7 @@ export const Navbar = () => {
 
   return (
     <div className="navbar">
-      <a href="/">
+      <a href={`${process.env.REACT_APP_HOMEPAGE}`}>
         <img src={`${process.env.PUBLIC_URL}/logo.png`} alt="logo" />
       </a>
 
