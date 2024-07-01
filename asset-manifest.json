@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/nestease/static/css/main.12f47cef.css",
-    "main.js": "/nestease/static/js/main.87f0c1df.js",
+    "main.js": "/nestease/static/js/main.98bae7ce.js",
     "static/media/slide.gif": "/nestease/static/media/slide.8077fcfed6e80f943377.gif",
     "static/media/register.jpg": "/nestease/static/media/register.54dd1cab01be8190a62d.jpg",
     "static/media/login.jpg": "/nestease/static/media/login.b5b34587e17a9a6595fc.jpg",
     "index.html": "/nestease/index.html",
     "main.12f47cef.css.map": "/nestease/static/css/main.12f47cef.css.map",
-    "main.87f0c1df.js.map": "/nestease/static/js/main.87f0c1df.js.map"
+    "main.98bae7ce.js.map": "/nestease/static/js/main.98bae7ce.js.map"
   },
   "entrypoints": [
     "static/css/main.12f47cef.css",
-    "static/js/main.87f0c1df.js"
+    "static/js/main.98bae7ce.js"
   ]
 }
